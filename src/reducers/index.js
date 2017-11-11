@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
 
 const rootReducer = combineReducers({
-  auth: require('./privileges').default,
-  nav: require('./score').default,
+  privileges: require('./privileges').default,
+  score: require('./score').default,
   user: require('./user').default
 })
 

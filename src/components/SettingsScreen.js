@@ -3,7 +3,7 @@ import { View, Text } from 'react-native';
 import { connect } from 'react-redux';
 import { returnScore } from '../reducers/score'
 
-const mapStateToProps = ({ score}) => ({ score })
+const mapStateToProps = ({ score, user }) => ({ score, user })
 const mapDispatchToProps = (dispatch) => {
   return {
     getScore: function () {
@@ -21,6 +21,7 @@ class SettingsScreen extends React.Component {
     console.log(this.props)
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>Welcome, {this.props.user.name}</Text>
         <Text>Your score so far: {this.props.score}</Text>
         <Text>Profile Screen</Text>
       </View>

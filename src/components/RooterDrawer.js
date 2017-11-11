@@ -1,13 +1,12 @@
 import React from 'react';
-import { StyleSheet, View, Text, Image } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { DrawerNavigator } from 'react-navigation'; // 1.0.0-beta.14
 import { Entypo, Feather, FontAwesome,  MaterialCommunityIcons } from 'react-native-vector-icons'; // 4.4.2
 import SettingsScreen from './SettingsScreen';
-import SavedTasksScreen from './SavedTasks';
+import TasksScreen from './Tasks';
 import CompletedTasksScreen from './CompletedTasks';
 import AwardsScreen from './Awards';
-import LogoutScreen from './LogoutScreen'
-
+import LandingScreen from './LandingScreen';
 
 const styles = StyleSheet.create({
   container: {
@@ -22,19 +21,9 @@ const styles = StyleSheet.create({
   }
 });
 
-const HomeScreen = () => (
-  <View style={styles.container}>
-        <Image
-          style={styles.image}
-          source={require('../../img/allycookies.jpg')} />
-        <Text>Welcome to Top Ally!</Text>
-        <Text>Please sign up to start playing.</Text>
-  </View>
-);
-
 const RootDrawer = DrawerNavigator({
   Home: {
-    screen: HomeScreen,
+    screen: LandingScreen,
     navigationOptions: {
       drawerLabel: 'Home',
       drawerIcon: ({ tintColor}) => (
@@ -59,10 +48,10 @@ const RootDrawer = DrawerNavigator({
       ),
     },
   },
-  SavedTasks: {
-    screen: SavedTasksScreen,
+  Tasks: {
+    screen: TasksScreen,
     navigationOptions: {
-      drawerLabel: 'Saved Tasks',
+      drawerLabel: 'Tasks',
       drawerIcon: ({ tintColor }) => (
         <FontAwesome
           name={'star-o'}
@@ -97,20 +86,7 @@ const RootDrawer = DrawerNavigator({
         />
       ),
     },
-  },
-  Logout: {
-    screen: LogoutScreen,
-    navigationOptions: {
-      drawerLabel: 'Logout',
-      drawerIcon: ({tintColor}) => (
-        <MaterialCommunityIcons
-          name={'logout'}
-          size={26}
-          style={{color: tintColor}}
-        />
-      ),
-    },
-  },
+  }
 });
 
 export default RootDrawer;

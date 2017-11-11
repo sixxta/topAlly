@@ -5,7 +5,7 @@ export default class SavedTasksScreen extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Saved Tasks</Text>
+        <Text>All Tasks</Text>
       </View>
     )
   }
