@@ -20,10 +20,15 @@
   },
   "dependencies": {
     "expo": "^22.0.2",
+    "firebase": "^4.6.2",
     "react": "16.0.0-beta.5",
     "react-native": "github:expo/react-native#sdk-22.0.0",
     "react-native-vector-icons": "^4.4.2",
     "react-navigation": "^1.0.0-beta.19",
+    "react-redux": "^5.0.6",
+    "realm": "^2.0.5",
+    "redux": "^3.7.2",
+    "redux-thunk": "^2.2.0",
     "watchman": "^0.1.8"
   }
 }

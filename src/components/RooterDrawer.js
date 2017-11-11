@@ -26,7 +26,7 @@ const HomeScreen = () => (
   <View style={styles.container}>
         <Image
           style={styles.image}
-          source={require('../img/allycookies.jpg')} />
+          source={require('../../img/allycookies.jpg')} />
         <Text>Welcome to Top Ally!</Text>
         <Text>Please sign up to start playing.</Text>
   </View>

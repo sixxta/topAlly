@@ -3,9 +3,14 @@
     "sdkVersion": "22.0.0",
     "name": "Top Ally",
     "icon": "./img/cookies_icon.png",
+    "version": "0.0.1",
+    "slug": "top-ally",
     "loading": {
       "backgroundImage": "./img/screen.png",
       "backgroundColor": "#607d8a"
+    },
+    "android": {
+      "package": "com.linatech.topally"
     }
   }
 }
