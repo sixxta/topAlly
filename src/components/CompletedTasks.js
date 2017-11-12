@@ -6,7 +6,6 @@ const mapStateToProps = ({ tasks }) => ({ tasks})
 
 class CompletedTasksScreen extends React.Component {
   render() {
-    console.log(this.props.tasks)
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text>{this.props.tasks.completedTasks.map(task => <Text>{task.name}</Text>)}</Text>

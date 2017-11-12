@@ -1,10 +1,11 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
-import { DrawerNavigator } from 'react-navigation'; // 1.0.0-beta.14
+import { DrawerNavigator, StackNavigator } from 'react-navigation'; // 1.0.0-beta.14
 import { Entypo, Feather, FontAwesome,  MaterialCommunityIcons } from 'react-native-vector-icons'; // 4.4.2
 import SettingsScreen from './SettingsScreen';
 import TasksScreen from './Tasks';
 import CompletedTasksScreen from './CompletedTasks';
+import TaskDetail from './TaskDetail';
 import AwardsScreen from './Awards';
 import LandingScreen from './LandingScreen';
 
@@ -19,6 +20,21 @@ const styles = StyleSheet.create({
     width: 100,
     height: 100
   }
+});
+
+const TasksStack = StackNavigator({
+  Tasks: {
+    screen: TasksScreen,
+    navigationOptions: {
+      title: 'Tasks',
+    },
+  },
+  Details: {
+    screen: TaskDetail,
+    navigationOptions: ({ navigation }) => ({
+      title: `${navigation.state.params.name}`,
+    }),
+  },
 });
 
 const RootDrawer = DrawerNavigator({
@@ -49,7 +65,7 @@ const RootDrawer = DrawerNavigator({
     },
   },
   Tasks: {
-    screen: TasksScreen,
+    screen: TasksStack,
     navigationOptions: {
       drawerLabel: 'Tasks',
       drawerIcon: ({ tintColor }) => (

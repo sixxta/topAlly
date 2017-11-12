@@ -1,15 +1,33 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { ScrollView, FlatList, Text } from 'react-native';
 import { connect } from 'react-redux';
+import { List, ListItem } from 'react-native-elements'
 
-const mapStateToProps = ({ tasks }) => ({ tasks})
+const mapStateToProps = ({ tasks }) => ({ tasks })
 
 class SavedTasksScreen extends React.Component {
+  constructor(){
+    super()
+    this.onLearnMore = this.onLearnMore.bind(this);
+  }
+  onLearnMore (task) {
+    this.props.navigation.navigate('Details', {...task});
+  }
+
   render() {
+    const { allTasks } = this.props.tasks
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        {this.props.tasks.allTasks.map(task => <Text key={task.id}>{task.name}: {task.points}</Text>)}
-      </View>
+      <ScrollView>
+        <List containerStyle={{marginBottom: 20}}>
+        {allTasks.map((task, i) => (
+          <ListItem
+            key={i}
+            title={task.name}
+            badge={{ value: task.points}}
+            onPress={() => this.onLearnMore(task)}
+          />))}
+      </List>
+      </ScrollView>
     )
   }
 }
