@@ -1,12 +1,17 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import { connect } from 'react-redux';
 
-export default class SavedTasksScreen extends React.Component {
+const mapStateToProps = ({ tasks }) => ({ tasks})
+
+class SavedTasksScreen extends React.Component {
   render() {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>All Tasks</Text>
+        {this.props.tasks.allTasks.map(task => <Text key={task.id}>{task.name}: {task.points}</Text>)}
       </View>
     )
   }
 }
+
+export default connect(mapStateToProps)(SavedTasksScreen);

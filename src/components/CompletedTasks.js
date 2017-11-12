@@ -1,12 +1,18 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import { connect } from 'react-redux';
 
-export default class CompletedTasksScreen extends React.Component {
+const mapStateToProps = ({ tasks }) => ({ tasks})
+
+class CompletedTasksScreen extends React.Component {
   render() {
+    console.log(this.props.tasks)
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Completed Tasks</Text>
+        <Text>{this.props.tasks.completedTasks.map(task => <Text>{task.name}</Text>)}</Text>
       </View>
     )
   }
 }
+
+export default connect(mapStateToProps)(CompletedTasksScreen);

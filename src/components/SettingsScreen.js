@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, ToastAndroid } from 'react-native';
 import { connect } from 'react-redux';
 import { CheckBox } from 'react-native-elements'
 import { returnScore } from '../reducers/score'
@@ -28,6 +28,7 @@ class SettingsScreen extends React.Component {
 
   changePrivilege(attribute){
     this.props.togglePrivilege(attribute);
+    ToastAndroid.showWithGravity('Privileges Checked', ToastAndroid.SHORT, ToastAndroid.TOP);
   }
 
   render() {
