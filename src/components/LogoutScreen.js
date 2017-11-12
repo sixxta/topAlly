@@ -1,12 +1,44 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { Text, TouchableOpacity, StyleSheet } from 'react-native';
+import { connect } from 'react-redux'
+import { logOut } from '../reducers/user'
 
-export default class LogoutScreen extends React.Component {
+const mapDispatchToProps = (dispatch) => {
+  return {
+    logOut: function () {
+      dispatch(logOut())
+    }
+  }
+}
+
+const styles = StyleSheet.create({
+  buttonContainer: {
+    paddingVertical: 10
+  },
+  buttonText: {
+    textAlign: 'center',
+  }
+})
+
+class LogoutScreen extends React.Component {
+  constructor(){
+    super()
+    this.handleSubmit = this.handleSubmit.bind(this)
+  }
+
+  handleSubmit(){
+    this.props.logOut()
+  }
+
   render() {
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Logout</Text>
-      </View>
+      <TouchableOpacity
+      style={styles.buttonContainer}
+      onPress={this.handleSubmit}>
+        <Text style={styles.buttonText}>Log Out</Text>
+      </TouchableOpacity>
     )
   }
 }
+
+export default connect(null, mapDispatchToProps)(LogoutScreen);
