@@ -17,7 +17,7 @@ export default reducer = (state = defaultTasks, action) => {
     case GET_COMPLETED_TASKS:
       return state.completedTasks
     case ADD_COMPLETED_TASK:
-      return state
+      return Object.assign({}, state, {completedTasks: state.completedTasks.concat(action.task)})
     default:
       return state
     }

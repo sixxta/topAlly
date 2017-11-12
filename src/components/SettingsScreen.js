@@ -36,7 +36,7 @@ class SettingsScreen extends React.Component {
     return (
       <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text>Welcome, {this.props.user.name}</Text>
-        <Text>Your score so far: {this.props.score}</Text>
+        <Text>Your score so far: {this.props.score.userScore}</Text>
         <Text>Please check your privileges</Text>
         <CheckBox
         center

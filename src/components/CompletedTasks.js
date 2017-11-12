@@ -1,5 +1,7 @@
+/* eslint-disable react/prefer-stateless-function */
 import React from 'react';
-import { View, Text } from 'react-native';
+import { ScrollView } from 'react-native';
+import { List, ListItem } from 'react-native-elements'
 import { connect } from 'react-redux';
 
 const mapStateToProps = ({ tasks }) => ({ tasks})
@@ -7,9 +9,17 @@ const mapStateToProps = ({ tasks }) => ({ tasks})
 class CompletedTasksScreen extends React.Component {
   render() {
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>{this.props.tasks.completedTasks.map(task => <Text>{task.name}</Text>)}</Text>
-      </View>
+      <ScrollView>
+      <List containerStyle={{marginBottom: 20}}>
+      {this.props.tasks.completedTasks.map((task) => (
+          <ListItem
+            key={task.id}
+            title={task.name}
+            badge={{ value: task.points}}
+            hideChevron
+          />))}
+        </List>
+      </ScrollView>
     )
   }
 }

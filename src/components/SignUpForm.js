@@ -67,20 +67,4 @@ class SignUpForm extends Component {
   }
 }
 
-{/* <TextInput
-  style = {styles.titleInput}
-  returnKeyType = {"next"}
-  autoFocus = {true}
-  placeholder = "Title"
-  onSubmitEditing={(event) => {
-    this.refs.SecondInput.focus();
-  }}
-/>
-<TextInput
-  ref='SecondInput'
-  style = {styles.descriptionInput}
-  multiline = {true}
-  maxLength = {200}
-  placeholder = "Description" /> */}
-
 export default connect(null, mapDispatchToProps)(SignUpForm)

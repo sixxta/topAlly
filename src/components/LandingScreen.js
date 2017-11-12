@@ -13,11 +13,9 @@ const styles = StyleSheet.create({
   logoContainer: {
     flexGrow: 1,
     alignItems: 'center',
-    justifyContent: 'center'
-  },
-  image: {
-    width: 100,
-    height: 100
+    justifyContent: 'center',
+    width: 300,
+    paddingLeft: 50
   }
 });
 
@@ -40,9 +38,13 @@ class LandingScreen extends Component {
       <KeyboardAvoidingView style={styles.container}>
         <View style={styles.logoContainer}>
             <Image
+              resize='contain'
               style={styles.image}
-              source={require('../../img/allycookies.jpg')} />
+              source={require('../../img/gamelogo.png')} />
             <Text>Welcome to Top Ally!</Text>
+            {this.props.user.name
+        ? null
+        : <Text> Please sign up!</Text>}
         </View>
         <View>
         {this.props.user.name

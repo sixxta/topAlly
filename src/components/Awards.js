@@ -1,13 +1,22 @@
 import React from 'react';
 import { View, Text } from 'react-native';
+import { connect } from 'react-redux'
 
-export default class AwardsScreen extends React.Component {
+const mapStateToProps = ({ score }) => ({ score })
+
+class AwardsScreen extends React.Component {
   render() {
     return (
-      <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-        <Text>Awards Screen yooo</Text>
+      this.props.score.highScore
+      ? <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+      <Text>Congratulations - you are the top ally!</Text>
+      <Text>In the real world, there are no prizes for being a decent person - but thanks for playing!</Text>
+    </View>
+      : <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+        <Text>No awards yet - keep playing!</Text>
       </View>
     )
   }
 }
 
+export default connect(mapStateToProps)(AwardsScreen)

@@ -52,6 +52,60 @@ const totalTasks = [
     description: 'Enact prison abolition and end the racist system of policing that destroys the lives of countless people of color',
     type: 'Systematic Change',
     form: 'link'
+  },
+  {
+    id: 7,
+    name: 'Help expose an abuser',
+    category: 'isMale',
+    points: 100,
+    description: 'Enact prison abolition and end the racist system of policing that destroys the lives of countless people of color',
+    type: 'Systematic Change',
+    form: 'link'
+  },
+  {
+    id: 8,
+    name: 'Establish universal daycare',
+    category: 'isMale',
+    points: 10000,
+    description: 'Enact prison abolition and end the racist system of policing that destroys the lives of countless people of color',
+    type: 'Systematic Change',
+    form: 'link'
+  },
+  {
+    id: 9,
+    name: 'Enact reproductive justice',
+    category: 'isMale',
+    points: 20000,
+    description: 'Enact prison abolition and end the racist system of policing that destroys the lives of countless people of color',
+    type: 'Systematic Change',
+    form: 'link'
+  },
+  {
+    id: 10,
+    name: 'Intervene in street harassment',
+    category: 'isMale',
+    points: 100,
+    description: 'Enact prison abolition and end the racist system of policing that destroys the lives of countless people of color',
+    type: 'Systematic Change',
+    form: 'link'
+  },
+  {
+    id: 11,
+    name: 'End the pay gap at your workplace',
+    category: 'isMale',
+    points: 500,
+    description: 'Enact prison abolition and end the racist system of policing that destroys the lives of countless people of color',
+    type: 'Systematic Change',
+    form: 'link'
+  },
+  {
+    id: 12,
+    name: 'Make sure women get credit',
+    category: 'isMale',
+    points: 30,
+    description: 'Enact prison abolition and end the racist system of policing that destroys the lives of countless people of color',
+    type: 'Systematic Change',
+    form: 'link'
   }
 ]
 
