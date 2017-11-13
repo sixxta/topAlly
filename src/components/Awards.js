@@ -9,9 +9,9 @@ class AwardsScreen extends React.Component {
     return (
       this.props.score.highScore
       ? <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Congratulations - you are the top ally!</Text>
-      <Text>In the real world, there are no prizes for being a decent person - but thanks for playing!</Text>
-    </View>
+      <Text style={{textAlign: 'center'}}>
+      Congratulations - you are the top ally! In the real world, there are no prizes for being a decent person - but thanks for playing!</Text>
+      </View>
       : <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
         <Text>No awards yet - keep playing!</Text>
       </View>

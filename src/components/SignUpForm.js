@@ -35,6 +35,12 @@ class SignUpForm extends Component {
     super()
     this.state = {name: '', email: ''}
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.focusNextField = this.focusNextField.bind(this);
+    this.inputs = {};
+  }
+
+  focusNextField(id) {
+    this.inputs[id].focus();
   }
 
   handleSubmit(){
@@ -49,13 +55,28 @@ class SignUpForm extends Component {
       <FormInput
       autoFocus={true}
       value={this.state.name}
+      ref={ input => {
+        this.inputs['one'] = input;
+      }}
+      onSubmitEditing={() => {
+        this.focusNextField('two');
+      }}
       onChangeText={(name) => this.setState({name})} />
       <FormLabel>Email</FormLabel>
       <FormInput
       value={this.state.email}
+      ref={ input => {
+        this.inputs['two'] = input;
+      }}
+      onSubmitEditing={() => {
+        this.focusNextField('three');
+      }}
       onChangeText={(email) => this.setState({email})} />
       <FormLabel>Password</FormLabel>
       <FormInput
+      ref={ input => {
+        this.inputs['three'] = input;
+      }}
       secureTextEntry />
       <TouchableOpacity
       onPress={this.handleSubmit}

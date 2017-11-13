@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, ToastAndroid } from 'react-native';
+import { View, Text, ToastAndroid, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
 import { CheckBox } from 'react-native-elements'
 import { returnScore } from '../reducers/score'
@@ -16,6 +16,16 @@ const mapDispatchToProps = (dispatch) => {
     }
   }
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#B3AC9C'
+  },
+  checkboxContainer: {
+    width: 250
+  }
+})
 
 class SettingsScreen extends React.Component {
   constructor(){
@@ -39,59 +49,56 @@ class SettingsScreen extends React.Component {
         <Text>Your score so far: {this.props.score.userScore}</Text>
         <Text>Please check your privileges</Text>
         <CheckBox
-        center
+        left
         title="Are you white"
         checkedIcon="dot-circle-o"
         uncheckedIcon="circle-o"
+        containerStyle={styles.checkboxContainer}
         onPress={() => this.changePrivilege('isWhite')}
         checked={this.props.privileges.isWhite} />
         <CheckBox
-        center
+        left
         title="Are you straight"
         checkedIcon="dot-circle-o"
         uncheckedIcon="circle-o"
+        containerStyle={styles.checkboxContainer}
         onPress={() => this.changePrivilege('isStraight')}
         checked={this.props.privileges.isStraight} />
         <CheckBox
-        center
+        left
         title="Are you male"
         checkedIcon="dot-circle-o"
         uncheckedIcon="circle-o"
+        containerStyle={styles.checkboxContainer}
         onPress={() => this.changePrivilege('isMale')}
         checked={this.props.privileges.isMale} />
         <CheckBox
-        center
+        left
         title="Are you able-bodied"
         checkedIcon="dot-circle-o"
         uncheckedIcon="circle-o"
+        containerStyle={styles.checkboxContainer}
         onPress={() => this.changePrivilege('isAbleBodied')}
         checked={this.props.privileges.isAbleBodied} />
         <CheckBox
-        center
+        left
         title="Are you cis"
         checkedIcon="dot-circle-o"
         uncheckedIcon="circle-o"
+        containerStyle={styles.checkboxContainer}
         onPress={() => this.changePrivilege('isCisgender')}
         checked={this.props.privileges.isCisgender} />
         <CheckBox
-        center
+        left
         title="Are you middle class or rich"
         checkedIcon="dot-circle-o"
         uncheckedIcon="circle-o"
+        containerStyle={styles.checkboxContainer}
         onPress={() => this.changePrivilege('isNotPoorOrWorkingClass')}
         checked={this.props.privileges.isNotPoorOrWorkingClass} />
       </View>
     )
   }
 }
-
-// const defaultPrivilege = {
-//   isWhite: true,
-//   isStraight: true,
-//   isMale: true,
-//   isAbleBodied: true,
-//   isCisgender: true,
-//   isNotPoorOrWorkingClass: true
-// };
 
 export default connect(mapStateToProps, mapDispatchToProps)(SettingsScreen);
