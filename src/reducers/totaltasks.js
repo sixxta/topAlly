@@ -13,7 +13,7 @@ const totalTasks = [
     name: 'End White Supremacy',
     category: 'isWhite',
     points: 10000000,
-    description: 'Enact prison abolition and end the racist system of policing that destroys the lives of countless people of color',
+    description: 'OK seriously if you do this you win the game',
     type: 'Systematic Change',
     form: 'link'
   },
@@ -22,8 +22,8 @@ const totalTasks = [
     name: 'Punch a Nazi',
     category: 'isWhite',
     points: 50,
-    description: 'Enact prison abolition and end the racist system of policing that destroys the lives of countless people of color',
-    type: 'Systematic Change',
+    description: 'The only good fascist is a dead fascist',
+    type: 'Good Praxis',
     form: 'link'
   },
   {
@@ -31,8 +31,8 @@ const totalTasks = [
     name: 'Give $$$ to radical POC organizations',
     category: 'isWhite',
     points: 50,
-    description: 'Enact prison abolition and end the racist system of policing that destroys the lives of countless people of color',
-    type: 'Systematic Change',
+    description: 'Put your money where your mouth is',
+    type: 'Good Praxis',
     form: 'link'
   },
   {
@@ -40,8 +40,8 @@ const totalTasks = [
     name: 'Stand up against racism in your family',
     category: 'isWhite',
     points: 20,
-    description: 'Enact prison abolition and end the racist system of policing that destroys the lives of countless people of color',
-    type: 'Systematic Change',
+    description: 'Tell your racist aunt that her racism finds no refuge even with her family',
+    type: 'Good Praxis',
     form: 'link'
   },
   {
@@ -49,8 +49,8 @@ const totalTasks = [
     name: 'Defund your local police',
     category: 'isWhite',
     points: 200,
-    description: 'Enact prison abolition and end the racist system of policing that destroys the lives of countless people of color',
-    type: 'Systematic Change',
+    description: 'Less resources and more accountability for the police',
+    type: 'Great Praxis',
     form: 'link'
   },
   {
@@ -58,8 +58,8 @@ const totalTasks = [
     name: 'Help expose an abuser',
     category: 'isMale',
     points: 100,
-    description: 'Enact prison abolition and end the racist system of policing that destroys the lives of countless people of color',
-    type: 'Systematic Change',
+    description: 'Hold abusers accountable and help end rape culture',
+    type: 'Good Praxis',
     form: 'link'
   },
   {
@@ -67,7 +67,7 @@ const totalTasks = [
     name: 'Establish universal daycare',
     category: 'isMale',
     points: 10000,
-    description: 'Enact prison abolition and end the racist system of policing that destroys the lives of countless people of color',
+    description: 'A forgotten plank of the women\'s liberation movement',
     type: 'Systematic Change',
     form: 'link'
   },
@@ -76,7 +76,7 @@ const totalTasks = [
     name: 'Enact reproductive justice',
     category: 'isMale',
     points: 20000,
-    description: 'Enact prison abolition and end the racist system of policing that destroys the lives of countless people of color',
+    description: 'Not just free and legal access to abortion but supporting mothers',
     type: 'Systematic Change',
     form: 'link'
   },
@@ -84,9 +84,9 @@ const totalTasks = [
     id: 10,
     name: 'Intervene in street harassment',
     category: 'isMale',
-    points: 100,
-    description: 'Enact prison abolition and end the racist system of policing that destroys the lives of countless people of color',
-    type: 'Systematic Change',
+    points: 60,
+    description: 'Access to public space is a feminist issue',
+    type: 'Good Praxis',
     form: 'link'
   },
   {
@@ -94,17 +94,17 @@ const totalTasks = [
     name: 'End the pay gap at your workplace',
     category: 'isMale',
     points: 500,
-    description: 'Enact prison abolition and end the racist system of policing that destroys the lives of countless people of color',
-    type: 'Systematic Change',
+    description: 'Equal pay for equal work',
+    type: 'Great praxis',
     form: 'link'
   },
   {
     id: 12,
     name: 'Make sure women get credit',
     category: 'isMale',
-    points: 30,
-    description: 'Enact prison abolition and end the racist system of policing that destroys the lives of countless people of color',
-    type: 'Systematic Change',
+    points: 10,
+    description: 'Don\'t let men take credit for women\'s intellectual labor',
+    type: 'Pat on the back',
     form: 'link'
   }
 ]

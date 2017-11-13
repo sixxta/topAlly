@@ -1,7 +1,7 @@
 /* eslint-disable react/prefer-stateless-function */
 import React from 'react';
-import { List, ListItem, Tile, Button } from 'react-native-elements'
-import { ScrollView, ToastAndroid } from 'react-native';
+import { List, ListItem, Tile, Button, FormLabel, FormInput } from 'react-native-elements'
+import { ScrollView, ToastAndroid, TextInput } from 'react-native';
 import { connect } from 'react-redux';
 import { addCompletedTask } from '../reducers/tasks'
 import { increaseScore } from '../reducers/score'
@@ -22,6 +22,7 @@ class TaskDetailScreen extends React.Component {
   constructor(){
     super()
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.inputs = '';
   }
 
   handleSubmit(){
@@ -31,26 +32,26 @@ class TaskDetailScreen extends React.Component {
     task.points + this.props.score.userScore > this.props.score.currentHighScore
     ? ToastAndroid.showWithGravity('New Top Ally!', ToastAndroid.SHORT, ToastAndroid.TOP)
     : ToastAndroid.showWithGravity('Task Submitted!', ToastAndroid.SHORT, ToastAndroid.TOP)
+    this.input.clearText();
     this.props.navigation.navigate('Tasks')
   }
 
   render() {
-    const { name, points, form, description, type } = this.props.navigation.state.params
+    const { name, points, description, type } = this.props.navigation.state.params
     return (
       <ScrollView>
       <List>
       <ListItem
-        title="name"
-        rightTitle={name}
+        title={name}
         hideChevron
       />
       <Tile
-        imageSrc={{require: ('./whiteAllyCookie.jpg')}}
+        imageSrc={require('./whiteAllyCookie.jpg')}
         title={description}
       />
       <ListItem
         title="points"
-        rightTitle={points.toString()}
+        rightTitle={points.toString() + ' AP'}
         hideChevron
       />
       <ListItem
@@ -58,6 +59,11 @@ class TaskDetailScreen extends React.Component {
         rightTitle={type}
         hideChevron
       />
+      <FormLabel>Whatever evidence you have for your good deed (links, witnesses, etc.)</FormLabel>
+      <FormInput
+      multiline={true}
+      maxHeight={2}
+      ref={input => this.input = input} />
       <Button
         title="SUBMIT"
         backgroundColor="grey"
