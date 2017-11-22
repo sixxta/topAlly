@@ -102,7 +102,7 @@ const totalTasks = [
     id: 12,
     name: 'Make sure women get credit',
     category: 'isMale',
-    points: 5,
+    points: 5.5,
     description: 'Don\'t let men take credit for women\'s intellectual labor',
     type: 'Pat on the back',
     form: 'link'
