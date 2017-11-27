@@ -102,3 +102,5 @@ class SettingsScreen extends React.Component {
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(SettingsScreen);
+
+//sdfdsfdsfsd
