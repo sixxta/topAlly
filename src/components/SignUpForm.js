@@ -89,3 +89,5 @@ class SignUpForm extends Component {
 }
 
 export default connect(null, mapDispatchToProps)(SignUpForm)
+
+//dfgdfgdfgdfg
